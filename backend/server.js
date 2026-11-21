@@ -10,11 +10,16 @@ const app = express();
 
 app.set("trust proxy", 1);
 
+
 // CORS Configuration
 
 app.use((req, res, next) => {
 
-    res.header("Access-Control-Allow-Origin", "https://aadhi-1012.github.io/fswd-onlinesurvey/");
+    res.header(
+        "Access-Control-Allow-Origin",
+        "https://aadhi-1012.github.io"
+    );
+
     res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Content-Type");
@@ -25,6 +30,7 @@ app.use((req, res, next) => {
 
     next();
 });
+
 
 app.use(express.json());
 
@@ -41,6 +47,7 @@ app.use(session({
         httpOnly: true
     }
 }));
+
 
 app.use(express.static(path.join(__dirname, "../frontend")));
 
