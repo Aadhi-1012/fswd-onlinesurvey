@@ -1,5 +1,5 @@
 
-const API_URL = "https://onlinesurvey-64gd.onrender.com";
+const API_URL = "https://fswd-onlinesurvey.onrender.com";
 
 let currentQuestions = [];
 
